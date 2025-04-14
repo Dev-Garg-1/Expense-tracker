@@ -23,18 +23,20 @@ function TransactionForm({ onAddTransaction }) {
     }
 
   return (
-    <div className='w-1/3'>
+    <div className='w-1/3 mt-12'>
         <form 
         onSubmit={handleSubmit}
         className='bg-white border-2 rounded-lg p-4 m-4 h-auto w-full'
         >
             <div>
-                <h2 className='font-bold text-2xl text-center mb-8'>Transaction Form</h2>
+                <h2 className='font-bold text-2xl text-center mb-8 mt-4 flex flex-col justify-center items-center'>Transaction Form
+                <div className='border-1 rounded-lg bg-yellow-500 h-1 w-[240px]'></div>
+                </h2>
 
                 <input 
                 type="text" 
                 placeholder=' Transaction Name ...' 
-                className='border-1 h-8 rounded-lg w-full' 
+                className='border-2 border-green-500 h-8 rounded-lg w-full focus:outline-none px-2'  
                 value={transactionName}
                 onChange={(e) => setTransactionName(e.target.value)}
                 />
@@ -42,13 +44,13 @@ function TransactionForm({ onAddTransaction }) {
                 <input 
                 type="number" 
                 placeholder=' Transaction Amount ...' 
-                className='border-1 h-8 rounded-lg w-full mt-4' 
+                className='border-2 border-green-500 h-8 rounded-lg w-full mt-8 focus:outline-none px-2' 
                 value={transactionAmount}
                 onChange={(e) => setTransactionAmount(e.target.value)}
                 />
 
                 <select
-                    className='border-1 h-8 rounded-lg w-full mt-4'
+                    className='border-2 border-green-500 h-8 rounded-lg w-full mt-8 focus:outline-none px-2'
                     value={transactionType}
                     onChange={(e) => setTransactionType(e.target.value)}
                 >
@@ -58,7 +60,7 @@ function TransactionForm({ onAddTransaction }) {
 
                 <div className='flex justify-center'>
                     <button 
-                    className='bg-sky-400 rounded-lg p-4 mt-8 items-center cursor-pointer hover:bg-sky-600 font-semibold'
+                    className='bg-green-500 rounded-lg p-4 mt-8 items-center cursor-pointer hover:bg-green-400 font-semibold mb-4'
                     >
                         Add Transaction
                     </button>

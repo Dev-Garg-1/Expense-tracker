@@ -15,7 +15,7 @@ function App() {
   return (
     <div className='bg-slate-900 h-screen'>
       <Header />
-      <div className='flex justify-evenly h-screen'>
+      <div className='flex justify-evenly flex-wrap'>
         <TransactionForm onAddTransaction={addTransaction} />
         <TransactionList transactions={transactions} />
       </div>
