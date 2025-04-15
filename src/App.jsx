@@ -7,11 +7,19 @@ import { ThemeProvider } from './context/theme'
 
 function App() {
 
-  const [transactions, setTransactions] = useState([])
+  const [transactions, setTransactions] = useState(() => {
+    const saved = localStorage.getItem('transactions');
+    return saved ? JSON.parse(saved) : [];
+  })
 
   function addTransaction(transaction) {
     setTransactions([...transactions, transaction])
   }
+
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(transactions))
+  }, [transactions])
+
 
 
   // these functions and variables will automatically be passed to the context provider
