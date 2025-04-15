@@ -8,7 +8,7 @@ function TransactionList({transactions}) {
             <Summary transactions={transactions} />
 
             {transactions.length == 0 ? (
-                <div className='bg-white border-2 rounded-lg p-4 m-4 h-auto w-full mt-12'>
+                <div className='bg-white rounded-lg p-4 m-4 h-auto w-full mt-12 shadow-2xl'>
                     <div className='font-bold text-2xl text-center mb-8 flex flex-col justify-center items-center'>
                     Recent Transactions
                     <div className='border-1 rounded-lg bg-yellow-500 h-1 w-[250px]'></div>
@@ -17,7 +17,7 @@ function TransactionList({transactions}) {
                     <div className='text-center w-full p-2 font-bold text-2xl'>No recent transactions</div>
                 </div>
                 ) : (
-                    <div className='bg-white border-2 rounded-lg p-4 m-4 h-auto w-full mt-12'>
+                    <div className='bg-white rounded-lg p-4 m-4 h-auto w-full mt-12 shadow-2xl'>
                         <div className='font-bold text-2xl text-center mb-8 flex flex-col justify-center items-center'>
                         Recent Transactions
                         <div className='border-1 rounded-lg bg-yellow-500 h-1 w-[250px]'></div>

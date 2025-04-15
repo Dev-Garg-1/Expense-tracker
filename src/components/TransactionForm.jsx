@@ -36,7 +36,7 @@ function TransactionForm({ onAddTransaction }) {
     <div className='md:w-1/3 mt-12 w-[70%]'>
         <form 
         onSubmit={handleSubmit}
-        className='bg-white border-2 rounded-lg p-4 m-4 h-auto w-full'
+        className='bg-white rounded-lg p-4 m-4 h-auto w-full shadow-2xl'
         >
             <div>
                 <h2 className='font-bold text-2xl text-center mb-8 mt-4 flex flex-col justify-center items-center'>Transaction Form
