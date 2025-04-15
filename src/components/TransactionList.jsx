@@ -3,7 +3,7 @@ import Summary from './Summary'
 
 function TransactionList({transactions}) {
     return (
-        <div className='w-1/3 mt-12'>
+        <div className='md:w-1/3 mt-12 w-[70%]'>
 
             <Summary transactions={transactions} />
 

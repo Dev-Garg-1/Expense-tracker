@@ -15,6 +15,16 @@ function TransactionForm({ onAddTransaction }) {
             type: transactionType,
         }
 
+        if(!transactionName || !transactionAmount) {
+            alert('Please fill in all fields')
+            return;
+        }
+
+        if(transactionAmount <= 0) {
+            alert('The amount cannot be less than or equal to 0');
+            return;
+        }
+
         onAddTransaction(transaction);
 
         setTransactionName('');
@@ -23,7 +33,7 @@ function TransactionForm({ onAddTransaction }) {
     }
 
   return (
-    <div className='w-1/3 mt-12'>
+    <div className='md:w-1/3 mt-12 w-[70%]'>
         <form 
         onSubmit={handleSubmit}
         className='bg-white border-2 rounded-lg p-4 m-4 h-auto w-full'

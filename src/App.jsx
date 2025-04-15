@@ -13,7 +13,7 @@ function App() {
   }
 
   return (
-    <div className='bg-slate-900 h-screen'>
+    <div className='h-screen'>
       <Header />
       <div className='flex justify-evenly flex-wrap'>
         <TransactionForm onAddTransaction={addTransaction} />
