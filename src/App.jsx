@@ -1,8 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
-import Header from './components/Header'
-import TransactionForm from './components/TransactionForm'
-import TransactionList from './components/TransactionList'
+import { Header, TransactionForm, TransactionList } from './components'
 import { ThemeProvider } from './context/theme'
 
 function App() {
