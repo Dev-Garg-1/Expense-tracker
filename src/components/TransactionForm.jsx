@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {v4 as uuidv4} from 'uuid';
 
 function TransactionForm({ onAddTransaction }) {
 
@@ -13,6 +14,7 @@ function TransactionForm({ onAddTransaction }) {
             name: transactionName,
             amount: parseFloat(transactionAmount),
             type: transactionType,
+            id: uuidv4(),
         }
 
         if(!transactionName || !transactionAmount) {
@@ -70,7 +72,7 @@ function TransactionForm({ onAddTransaction }) {
 
                 <div className='flex justify-center'>
                     <button 
-                    className='bg-green-500 rounded-lg p-4 mt-8 items-center cursor-pointer hover:bg-green-400 font-semibold mb-4'
+                    className='bg-green-500 rounded-lg p-4 mt-8 items-center cursor-pointer hover:bg-green-400 font-semibold mb-4 transition hover:-translate-y-1 duration-200 hover:scale-110'
                     >
                         Add Transaction
                     </button>

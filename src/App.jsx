@@ -14,6 +14,10 @@ function App() {
     setTransactions([...transactions, transaction])
   }
 
+  function deleteTransaction(id) {
+    setTransactions(transactions.filter(transaction => transaction.id !== id));
+  }
+
   useEffect(() => {
     localStorage.setItem('transactions', JSON.stringify(transactions))
   }, [transactions])
@@ -45,7 +49,7 @@ function App() {
         <Header />
         <div className='flex justify-evenly flex-wrap'>
           <TransactionForm onAddTransaction={addTransaction} />
-          <TransactionList transactions={transactions} />
+          <TransactionList transactions={transactions} ondeleteTransaction={deleteTransaction}/>
         </div>
       </div>
     </ThemeProvider>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Summary from './Summary'
 
-function TransactionList({transactions}) {
+function TransactionList({transactions, ondeleteTransaction}) {
     return (
         <div className='md:w-1/3 mt-12 w-[70%]'>
 
@@ -25,6 +25,12 @@ function TransactionList({transactions}) {
                         {transactions.map((tx, index) => (
                             <div className={`border-1 rounded-lg mt-4 ${tx.type === 'income' ? 'bg-green-500' : 'bg-red-500'}`} key={index}>
                                 <div className="text-center w-full p-2 overflow-hidden text-ellipsis">{tx.name}, {tx.amount}</div>
+                                <button
+                                    className='cursor-pointer'
+                                    onClick={() => ondeleteTransaction(tx.id)}
+                                >
+                                    Delete
+                                </button>
                             </div>
                         ))}
                 </div>
