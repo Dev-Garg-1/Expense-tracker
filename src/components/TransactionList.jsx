@@ -1,5 +1,6 @@
 import React from 'react'
 import Summary from './Summary'
+import { motion } from "motion/react"
 
 function TransactionList({transactions, ondeleteTransaction}) {
     return (
@@ -24,9 +25,14 @@ function TransactionList({transactions, ondeleteTransaction}) {
                     </div>
                         {transactions.map((tx, index) => (
                             <div className='flex justify-evenly items-center key={index}'>
-                                <div className={`rounded-lg mt-4 w-[80%] ${tx.type === 'income' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                <motion.div 
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className={`rounded-lg mt-4 w-[80%] ${tx.type === 'income' ? 'bg-green-500' : 'bg-red-500'}`}
+                                >
                                     <div className="p-2 overflow-hidden text-ellipsis">{tx.name}, {tx.amount}</div>
-                                </div>
+                                </motion.div>
 
                                 <div className='mt-4 bg-red-500 rounded-full p-2 transition duration-200 hover:scale-110'>
                                     <button
@@ -37,8 +43,6 @@ function TransactionList({transactions, ondeleteTransaction}) {
                                     </button> 
                                 </div>
                             </div>
-
-                            
                         ))}
                 </div>
             )}
