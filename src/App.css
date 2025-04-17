@@ -1,2 +1,3 @@
 @import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.css";
 @custom-variant dark (&:where(.dark, .dark *));

@@ -23,15 +23,22 @@ function TransactionList({transactions, ondeleteTransaction}) {
                         <div className='border-1 rounded-lg bg-yellow-500 h-1 w-[250px]'></div>
                     </div>
                         {transactions.map((tx, index) => (
-                            <div className={`border-1 rounded-lg mt-4 ${tx.type === 'income' ? 'bg-green-500' : 'bg-red-500'}`} key={index}>
-                                <div className="text-center w-full p-2 overflow-hidden text-ellipsis">{tx.name}, {tx.amount}</div>
-                                <button
-                                    className='cursor-pointer'
-                                    onClick={() => ondeleteTransaction(tx.id)}
-                                >
-                                    Delete
-                                </button>
+                            <div className='flex justify-evenly items-center key={index}'>
+                                <div className={`rounded-lg mt-4 w-[80%] ${tx.type === 'income' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                    <div className="p-2 overflow-hidden text-ellipsis">{tx.name}, {tx.amount}</div>
+                                </div>
+
+                                <div className='mt-4 bg-red-500 rounded-full p-2 transition duration-200 hover:scale-110'>
+                                    <button
+                                        className='cursor-pointer w-full h-full'
+                                        onClick={() => ondeleteTransaction(tx.id)}
+                                    >
+                                        <i class="fa fa-trash"></i>
+                                    </button> 
+                                </div>
                             </div>
+
+                            
                         ))}
                 </div>
             )}
